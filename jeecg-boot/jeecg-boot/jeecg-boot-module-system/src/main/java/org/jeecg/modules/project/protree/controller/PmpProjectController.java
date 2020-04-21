@@ -295,6 +295,10 @@ public class PmpProjectController extends JeecgController<PmpProject, IPmpProjec
 	@PutMapping(value = "/edit")
 	public Result<?> edit(@RequestBody PmpProject pmpProject) {
 		pmpProjectService.updateById(pmpProject);
+		//pmpProjectService.updateMyNode(pmpProject.getProjectname(),pmpProject.getParentnode(),pmpProject.getId());
+		if("0".equals(pmpProject.getHaschild()) && !"0".equals(pmpProject.getParentnode())){
+			pmpProjectService.updateTreeSchedule(pmpProject.getId());
+		}
 		return Result.ok("编辑成功!");
 	}
 

@@ -13,6 +13,11 @@ export function handleStatus(values) {
     if(compareDate(values.startdate, moment(new Date()).format('YYYY-MM-DD'))){
       return '5'
     }
+    else if(compareDate(values.enddate, moment(new Date()).format('YYYY-MM-DD'))){
+      return '3'
+    }else {
+      return '4'
+    }
   }else if(values.schedule === 100) {
     if(compareDate(values.enddate, moment(new Date()).format('YYYY-MM-DD'))){
       return '1'

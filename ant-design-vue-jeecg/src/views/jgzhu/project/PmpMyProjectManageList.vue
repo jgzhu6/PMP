@@ -63,8 +63,7 @@
               :headers="tokenHeader"
               :action="importExcelUrl"
               @change="handleImportExcel"
-            >
-            </a-upload>
+            ></a-upload>
           </a-menu-item>
           <a-menu-item key="1">
             <a-icon type="import" />导入
@@ -84,7 +83,7 @@
           批量操作
           <a-icon type="down" />
         </a-button>
-      </a-dropdown> -->
+      </a-dropdown>-->
     </div>
 
     <!-- table区域-begin -->
@@ -242,7 +241,7 @@ export default {
     return {
       proStatusVal: '负责的项目',
       description: '项目主表管理页面',
-       xyscroll:{ y: 500 },
+      xyscroll: { y: 500 },
       projectTypeDictOptions: [],
       principalDictOptions: [],
       searchText: '',
@@ -419,6 +418,11 @@ export default {
     }
   },
   methods: {
+    handleDetail: function (record) {
+      this.$refs.modalForm.edit(record);
+      this.$refs.modalForm.title = "详情";
+      this.$refs.modalForm.disableSubmit = true;
+    },
     handleSearch(selectedKeys, confirm) {
       confirm()
       this.searchText = selectedKeys[0]

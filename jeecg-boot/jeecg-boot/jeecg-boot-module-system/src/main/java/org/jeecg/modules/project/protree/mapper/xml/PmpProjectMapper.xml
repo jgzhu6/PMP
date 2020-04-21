@@ -9,6 +9,12 @@
 	    )}
 	</select>
 
+	<select id="updateTreeSchedule" resultType="java.lang.String" statementType="CALLABLE">
+	   {call dbo.mySchedule(
+	    #{id,jdbcType=VARCHAR,mode=IN}
+	    )}
+	</select>
+
 	<select id="isDelteSubNode" resultType="java.lang.String" statementType="CALLABLE">
 	   {call dbo.isDelteSubNode(
 	    #{projectname,jdbcType=VARCHAR,mode=IN},

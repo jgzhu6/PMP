@@ -242,6 +242,7 @@ export const JeecgListMixin = {
           this.$refs.modalForm.title = "编辑";
           this.$refs.modalForm.disableSubmit = false;
           this.$refs.modalForm.readOnly = true;
+          this.$refs.modalForm.myDisableSubmit = record.haschild=='1'?true:false;
         } else {
           this.openNotification('提示', '权限不够哦！禁止编辑！')
         }

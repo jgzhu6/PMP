@@ -7,7 +7,7 @@
       <gantt-header slot="header"></gantt-header>
     </gantt-elastic>
     <pmpTaskdetails-modal ref="modalForm1"></pmpTaskdetails-modal>
-    <pmpCommentSummary-modal ref="csModal"></pmpCommentSummary-modal>
+    <pmp-c-s-union-modal ref="csModal"></pmp-c-s-union-modal>
     <pmpProjectManage-modal ref="modalForm2"></pmpProjectManage-modal>
   </div>
 </template>
@@ -22,6 +22,7 @@ import GanttHeader from 'gantt-elastic-header'
 import dayjs from 'dayjs'
 import PmpTaskdetailsModal from '@views/jgzhu/project/modules/PmpTaskdetailsModal'
 import PmpCommentSummaryModal from '@views/wqc/modules/PmpCommentSummaryModal'
+import PmpCSUnionModal from '../../wqc/modules/PmpCSUnionModal'
 import PmpProjectManageModal from '@views/jgzhu/project/modules/PmpProjectManageModal'
 
 // just helper to get current dates
@@ -192,7 +193,8 @@ export default {
     GanttHeader,
     PmpTaskdetailsModal,
     PmpCommentSummaryModal,
-    PmpProjectManageModal
+    PmpProjectManageModal,
+    PmpCSUnionModal
   },
   props: {
     dataSource: {

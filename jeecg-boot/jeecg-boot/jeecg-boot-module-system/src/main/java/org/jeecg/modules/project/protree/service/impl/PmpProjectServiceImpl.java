@@ -40,6 +40,11 @@ public class PmpProjectServiceImpl extends ServiceImpl<PmpProjectMapper, PmpProj
     }
 
     @Override
+    public void updateTreeSchedule(String id) {
+        pmpProjectMapper.updateTreeSchedule(id);
+    }
+
+    @Override
     public void isDelteSubNode(String projectname, String id, String isdelete) {
         pmpProjectMapper.isDelteSubNode(projectname, id, isdelete);
     }

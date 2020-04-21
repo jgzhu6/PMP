@@ -69,7 +69,7 @@
           <a-tag :color="text==1 ? 'volcano' : 'green'">{{ text == 0 ? '正常':'禁用'}}</a-tag>
         </span>
         <span slot="action" slot-scope="text, record">
-          <a @click="myHandleTaskEdit(record)">节点编辑</a>
+          <a @click="myHandleDetailEdit(record)" v-show="record.parentnode!=0">编辑</a>
           <a-divider type="vertical" />
           <a-dropdown>
             <a class="ant-dropdown-link">
@@ -363,6 +363,7 @@ export default {
           this.$refs.modalForm1.title = '编辑'
           this.$refs.modalForm1.disableSubmit = false
           this.$refs.modalForm1.description = this.$route.query.data.projecttype
+          this.$refs.modalForm1.myDisableSubmit = record.haschild=='1'?true:false;
         } else {
           this.openNotification('提示', '权限不够哦,禁止编辑！')
         }

@@ -19,7 +19,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PmpProjectMapper extends BaseMapper<PmpProject> {
     //调用存储过程
-     void updateMyNode(@Param("projectname") String projectname, @Param("parentNodeId") String parentNodeId, @Param("id") String id);
+    void updateMyNode(@Param("projectname") String projectname, @Param("parentNodeId") String parentNodeId, @Param("id") String id);
+
+    //调用存储过程
+    void updateTreeSchedule(@Param("id") String id);
+
 
     //调用存储过程
     void isDelteSubNode(@Param("projectname") String projectname, @Param("id") String id, @Param("isdelete") String isdelete);

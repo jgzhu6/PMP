@@ -69,7 +69,7 @@
                 :max="100"
                 v-decorator="[ 'schedule', validatorRules.schedule]"
                 :trigger-change="true"
-                :disabled="disableSubmit"
+                :disabled="myDisableSubmit"
               />
             </a-col>
             <a-col :span="4">
@@ -185,6 +185,7 @@ export default {
   },
   data() {
     return {
+      myDisableSubmit:false,
       description1: '',
       disableSubmit: false,
       form: this.$form.createForm(this),

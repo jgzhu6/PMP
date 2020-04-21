@@ -99,7 +99,7 @@
                 :max="100"
                 v-decorator="[ 'schedule', validatorRules.schedule]"
                 :trigger-change="true"
-                :disabled="disableSubmit"
+                :disabled="myDisableSubmit"
               />
             </a-col>
             <a-col :span="4">
@@ -109,7 +109,7 @@
                 style="marginLeft: 16px"
                 v-decorator="[ 'schedule', validatorRules.schedule]"
                 :trigger-change="true"
-                :disabled="disableSubmit"
+                :disabled="myDisableSubmit"
               />
             </a-col>
           </a-row>
@@ -177,6 +177,7 @@ export default {
   },
   data() {
     return {
+      myDisableSubmit:false,
       show: true,
       disableSubmit: false,
       readOnly: false,

@@ -25,6 +25,8 @@ public interface IPmpProjectService extends IService<PmpProject> {
 
     void updateMyNode(String projectname, String parentNodeId, String id);
 
+    void updateTreeSchedule(String id);
+
     void isDelteSubNode(String projectname, String id, String isdelete);
 
     Integer IsSuperior(String id, String principal);
